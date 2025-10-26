@@ -53,7 +53,6 @@ instance/
 
 # Documentation (optional - remove if you want to keep these)
 *_SUMMARY.md
-*_GUIDE.md
 *_CHECKLIST.md
 *_REPORT.md
 *_FIX*.md
@@ -72,5 +71,10 @@ WINDOWS_*.md
 KIOSK_*.md
 nul
 
+# Keep important guides
+!DEPLOYMENT_GUIDE.md
+!DEBUGGING_GUIDE.md
+
 # Production files
 *.txt
+!QUICK_START.txt
