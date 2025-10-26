@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-grey-50 via-blue-50/30 to-purple-50/20 text-grey-900 font-sans;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+  }
+
+  h1 {
+    @apply text-h1 text-grey-900;
+  }
+
+  h2 {
+    @apply text-h2 text-grey-900;
+  }
+
+  h3 {
+    @apply text-h3 text-grey-900;
+  }
+
+  p {
+    @apply text-body text-grey-600;
+  }
+}
+
+@layer components {
+  /* Button Styles - Phase 2A */
+  .btn {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-102;
+  }
+
+  .btn-primary {
+    @apply bg-shoprite-red text-white hover:bg-shoprite-redDark focus:ring-shoprite-red shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-shoprite-red border-2 border-shoprite-red hover:bg-red-50 focus:ring-shoprite-red;
+  }
+
+  .btn-success {
+    @apply bg-success text-white hover:bg-success-dark focus:ring-success;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white hover:bg-danger-dark focus:ring-danger;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-grey-700 border-2 border-grey-300 hover:bg-grey-50 focus:ring-grey-500;
+  }
+
+  /* Card Styles - Phase 2A with Glassmorphism */
+  .card {
+    @apply bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-2xl border border-white/20 hover:border-white/40;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  }
+
+  .card-header {
+    @apply bg-gradient-to-r from-grey-50/80 to-blue-50/40 backdrop-blur-sm rounded-t-2xl px-6 py-4 border-b border-grey-200/50 font-semibold text-grey-900;
+  }
+
+  .card-simple {
+    @apply bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl border border-white/30;
+  }
+
+  .card-glass {
+    @apply bg-white/60 backdrop-blur-2xl rounded-2xl shadow-xl p-6 transition-all duration-500 hover:shadow-2xl border border-white/40 hover:bg-white/70;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
+  }
+
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-2.5 border border-grey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-shoprite-red focus:border-transparent transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-danger focus:ring-danger;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-grey-700 mb-2;
+  }
+
+  /* Badge Styles - Phase 2A */
+  .badge {
+    @apply px-3 py-1.5 text-xs font-semibold rounded-full inline-flex items-center;
+  }
+
+  .badge-active {
+    @apply bg-success text-white;
+  }
+
+  .badge-maintenance {
+    @apply bg-warning text-white;
+  }
+
+  .badge-stolen {
+    @apply bg-danger text-white;
+  }
+
+  .badge-decommissioned {
+    @apply bg-grey-500 text-white;
+  }
+
+  .badge-recovered {
+    @apply bg-primary-500 text-white;
+  }
+
+  /* Status Badges with Icons */
+  .status-badge {
+    @apply badge shadow-sm;
+  }
+
+  /* Alert Styles - Phase 2A */
+  .alert {
+    @apply p-4 rounded-lg mb-4 border-l-4 animate-fade-in;
+  }
+
+  .alert-info {
+    @apply bg-blue-50 border-blue-500 text-blue-800;
+  }
+
+  .alert-warning {
+    @apply bg-warning-light border-warning text-warning-dark;
+  }
+
+  .alert-critical {
+    @apply bg-danger-light border-danger text-danger-dark;
+  }
+
+  .alert-success {
+    @apply bg-success-light border-success text-success-dark;
+  }
+
+  /* Table Styles - Phase 2A */
+  .table {
+    @apply w-full border-collapse;
+  }
+
+  .table-header {
+    @apply bg-grey-50 text-left;
+  }
+
+  .table-header th {
+    @apply px-6 py-4 text-sm font-semibold text-grey-900 border-b-2 border-grey-200;
+  }
+
+  .table-row {
+    @apply transition-colors duration-150 hover:bg-red-50 border-b border-grey-100;
+  }
+
+  .table-row-selected {
+    @apply bg-shoprite-red/10 border-l-4 border-shoprite-red;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 text-sm text-grey-700;
+  }
+
+  /* Loading Spinner */
+  .spinner {
+    @apply inline-block w-6 h-6 border-4 border-grey-200 border-t-shoprite-red rounded-full animate-spin;
+  }
+
+  /* Page Title */
+  .page-title {
+    @apply text-h1 font-bold text-grey-900 mb-6;
+  }
+
+  .page-subtitle {
+    @apply text-h3 font-semibold text-grey-700 mb-4;
+  }
+
+  /* Stats Card with Gradient */
+  .stat-card {
+    @apply bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl p-6 transition-all duration-500 hover:shadow-2xl hover:scale-105 border border-white/30;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 100%);
+  }
+
+  .stat-card-gradient {
+    @apply relative overflow-hidden;
+  }
+
+  .stat-card-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(59, 130, 246, 0.05) 50%, rgba(147, 51, 234, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .stat-card-gradient:hover::before {
+    opacity: 1;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-grey-900;
+  }
+
+  .stat-label {
+    @apply text-sm text-grey-600 mt-1;
+  }
+
+  /* Navigation Active State */
+  .nav-link-active {
+    @apply bg-shoprite-red text-white shadow-md;
+  }
+
+  .nav-link-inactive {
+    @apply text-grey-700 hover:bg-red-50 hover:text-shoprite-red;
+  }
+}
+
+@layer utilities {
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .bg-gradient-red {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .bg-gradient-green {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  /* Glassmorphism utility classes */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /* Premium shadows */
+  .shadow-premium {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 0 15px 50px 0 rgba(31, 38, 135, 0.2);
+  }
+
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    animation: shimmer 3s infinite;
+    background: linear-gradient(to right, transparent 4%, rgba(255,255,255,0.5) 25%, transparent 36%);
+    background-size: 1000px 100%;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  }
+
+  /* Fade in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
